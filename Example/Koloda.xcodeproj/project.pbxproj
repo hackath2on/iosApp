@@ -8,29 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		191D14781525C400D3E86FEC /* Pods_Koloda_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5243B3EDBF06248559332C86 /* Pods_Koloda_Example.framework */; };
-		440FB7671B51499A009FC9FC /* CustomKolodaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440FB7661B51499A009FC9FC /* CustomKolodaView.swift */; };
-		440FB7691B515995009FC9FC /* BackgroundAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440FB7681B515995009FC9FC /* BackgroundAnimationViewController.swift */; };
 		4420661D1B44577500FD4CAD /* OverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4420661B1B44577500FD4CAD /* OverlayView.xib */; };
-		4420661F1B4457E800FD4CAD /* ExampleOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4420661E1B4457E800FD4CAD /* ExampleOverlayView.swift */; };
-		446BFD091CB0184A00619E78 /* BackgroundKolodaAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446BFD081CB0184A00619E78 /* BackgroundKolodaAnimator.swift */; };
-		44B5EC291B660C8500895E3D /* CustomOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B5EC281B660C8500895E3D /* CustomOverlayView.swift */; };
-		44B5EC2B1B660C9100895E3D /* CustomOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44B5EC2A1B660C9100895E3D /* CustomOverlayView.xib */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
+		9C29B3611EC635F000414661 /* CustomKolodaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C29B3591EC635F000414661 /* CustomKolodaView.swift */; };
+		9C29B3621EC635F000414661 /* CustomOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C29B35A1EC635F000414661 /* CustomOverlayView.swift */; };
+		9C29B3631EC635F000414661 /* CustomOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C29B35B1EC635F000414661 /* CustomOverlayView.xib */; };
+		9C29B3641EC635F000414661 /* ExampleOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C29B35C1EC635F000414661 /* ExampleOverlayView.swift */; };
+		9C29B3651EC635F000414661 /* BackgroundAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C29B35F1EC635F000414661 /* BackgroundAnimationViewController.swift */; };
+		9C29B3661EC635F000414661 /* BackgroundKolodaAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C29B3601EC635F000414661 /* BackgroundKolodaAnimator.swift */; };
+		9C29B3691EC637DF00414661 /* AskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C29B3681EC637DF00414661 /* AskViewController.swift */; };
+		9C29B36C1EC6383E00414661 /* TableView+AskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C29B36B1EC6383E00414661 /* TableView+AskVC.swift */; };
+		9C29B36F1EC710B400414661 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C29B36E1EC710B400414661 /* Alamofire.framework */; };
+		9C29B3711EC711C400414661 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C29B3701EC711C400414661 /* SwiftyJSON.framework */; };
+		9C29B3731EC7123B00414661 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C29B3721EC7123B00414661 /* IQKeyboardManagerSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		093C6CC368001B8BAFD235CB /* Pods-Koloda_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Koloda_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Koloda_Example/Pods-Koloda_Example.release.xcconfig"; sourceTree = "<group>"; };
 		1242FA2632AFB60821C100AF /* Pods-Koloda_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Koloda_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Koloda_Tests/Pods-Koloda_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		440FB7661B51499A009FC9FC /* CustomKolodaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomKolodaView.swift; sourceTree = "<group>"; };
-		440FB7681B515995009FC9FC /* BackgroundAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundAnimationViewController.swift; sourceTree = "<group>"; };
 		4420661C1B44577500FD4CAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/OverlayView.xib; sourceTree = "<group>"; };
-		4420661E1B4457E800FD4CAD /* ExampleOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleOverlayView.swift; sourceTree = "<group>"; };
-		446BFD081CB0184A00619E78 /* BackgroundKolodaAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundKolodaAnimator.swift; sourceTree = "<group>"; };
-		44B5EC281B660C8500895E3D /* CustomOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOverlayView.swift; sourceTree = "<group>"; };
-		44B5EC2A1B660C9100895E3D /* CustomOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomOverlayView.xib; sourceTree = "<group>"; };
 		5243B3EDBF06248559332C86 /* Pods_Koloda_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Koloda_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C6DBB80685DABAE785B8715 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* Koloda_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Koloda_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,7 +38,17 @@
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		8C6AF94B3192C604963C53B3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		9C29B3591EC635F000414661 /* CustomKolodaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomKolodaView.swift; sourceTree = "<group>"; };
+		9C29B35A1EC635F000414661 /* CustomOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOverlayView.swift; sourceTree = "<group>"; };
+		9C29B35B1EC635F000414661 /* CustomOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomOverlayView.xib; sourceTree = "<group>"; };
+		9C29B35C1EC635F000414661 /* ExampleOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleOverlayView.swift; sourceTree = "<group>"; };
+		9C29B35F1EC635F000414661 /* BackgroundAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundAnimationViewController.swift; sourceTree = "<group>"; };
+		9C29B3601EC635F000414661 /* BackgroundKolodaAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundKolodaAnimator.swift; sourceTree = "<group>"; };
+		9C29B3681EC637DF00414661 /* AskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AskViewController.swift; sourceTree = "<group>"; };
+		9C29B36B1EC6383E00414661 /* TableView+AskVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TableView+AskVC.swift"; sourceTree = "<group>"; };
+		9C29B36E1EC710B400414661 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/Koloda-ahkvvxfxggyljhaoldsbprhmxooj/Build/Products/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		9C29B3701EC711C400414661 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/Koloda-ahkvvxfxggyljhaoldsbprhmxooj/Build/Products/Debug-iphoneos/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
+		9C29B3721EC7123B00414661 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManagerSwift.framework; path = "Pods/../build/Debug-iphoneos/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework"; sourceTree = "<group>"; };
 		A8A21A7254497CF03F2BBEA3 /* Pods-Koloda_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Koloda_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Koloda_Tests/Pods-Koloda_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		CF2C9E50C19A9188464AE19E /* Pods-Koloda_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Koloda_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Koloda_Example/Pods-Koloda_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		D6781607B5327BAF503C32E3 /* Koloda.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Koloda.podspec; path = ../Koloda.podspec; sourceTree = "<group>"; };
@@ -50,6 +59,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C29B3731EC7123B00414661 /* IQKeyboardManagerSwift.framework in Frameworks */,
+				9C29B3711EC711C400414661 /* SwiftyJSON.framework in Frameworks */,
+				9C29B36F1EC710B400414661 /* Alamofire.framework in Frameworks */,
 				191D14781525C400D3E86FEC /* Pods_Koloda_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,35 +92,19 @@
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				440FB7681B515995009FC9FC /* BackgroundAnimationViewController.swift */,
-				446BFD081CB0184A00619E78 /* BackgroundKolodaAnimator.swift */,
-				440FB7661B51499A009FC9FC /* CustomKolodaView.swift */,
-				44B5EC281B660C8500895E3D /* CustomOverlayView.swift */,
-				4420661E1B4457E800FD4CAD /* ExampleOverlayView.swift */,
-				607FACD91AFB9204008FA782 /* Main.storyboard */,
-				607FACDC1AFB9204008FA782 /* Images.xcassets */,
-				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
-				4420661B1B44577500FD4CAD /* OverlayView.xib */,
-				44B5EC2A1B660C9100895E3D /* CustomOverlayView.xib */,
-				607FACD31AFB9204008FA782 /* Supporting Files */,
+				607FACD41AFB9204008FA782 /* Info.plist */,
+				9C29B3581EC635F000414661 /* KolodaCustom */,
+				9C29B36D1EC7103900414661 /* StoryBoard */,
+				9C29B35D1EC635F000414661 /* Scenes */,
 			);
 			name = Example;
 			path = Koloda;
-			sourceTree = "<group>";
-		};
-		607FACD31AFB9204008FA782 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				607FACD41AFB9204008FA782 /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
 				D6781607B5327BAF503C32E3 /* Koloda.podspec */,
-				8C6AF94B3192C604963C53B3 /* README.md */,
 				5C6DBB80685DABAE785B8715 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
@@ -117,9 +113,69 @@
 		85B3405D0F2A73D9A709B3FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9C29B3721EC7123B00414661 /* IQKeyboardManagerSwift.framework */,
+				9C29B3701EC711C400414661 /* SwiftyJSON.framework */,
+				9C29B36E1EC710B400414661 /* Alamofire.framework */,
 				5243B3EDBF06248559332C86 /* Pods_Koloda_Example.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9C29B3581EC635F000414661 /* KolodaCustom */ = {
+			isa = PBXGroup;
+			children = (
+				4420661B1B44577500FD4CAD /* OverlayView.xib */,
+				9C29B3591EC635F000414661 /* CustomKolodaView.swift */,
+				9C29B35A1EC635F000414661 /* CustomOverlayView.swift */,
+				9C29B35B1EC635F000414661 /* CustomOverlayView.xib */,
+				9C29B35C1EC635F000414661 /* ExampleOverlayView.swift */,
+			);
+			path = KolodaCustom;
+			sourceTree = "<group>";
+		};
+		9C29B35D1EC635F000414661 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				9C29B35E1EC635F000414661 /* QuestionsList */,
+				9C29B3671EC637C300414661 /* Ask */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		9C29B35E1EC635F000414661 /* QuestionsList */ = {
+			isa = PBXGroup;
+			children = (
+				9C29B35F1EC635F000414661 /* BackgroundAnimationViewController.swift */,
+				9C29B3601EC635F000414661 /* BackgroundKolodaAnimator.swift */,
+			);
+			path = QuestionsList;
+			sourceTree = "<group>";
+		};
+		9C29B3671EC637C300414661 /* Ask */ = {
+			isa = PBXGroup;
+			children = (
+				9C29B36A1EC6382F00414661 /* Extensions */,
+				9C29B3681EC637DF00414661 /* AskViewController.swift */,
+			);
+			path = Ask;
+			sourceTree = "<group>";
+		};
+		9C29B36A1EC6382F00414661 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9C29B36B1EC6383E00414661 /* TableView+AskVC.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9C29B36D1EC7103900414661 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				607FACD91AFB9204008FA782 /* Main.storyboard */,
+				607FACDC1AFB9204008FA782 /* Images.xcassets */,
+				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
+			);
+			name = StoryBoard;
 			sourceTree = "<group>";
 		};
 		AB88095976C7B6CA809587FB /* Pods */ = {
@@ -198,7 +254,7 @@
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				4420661D1B44577500FD4CAD /* OverlayView.xib in Resources */,
-				44B5EC2B1B660C9100895E3D /* CustomOverlayView.xib in Resources */,
+				9C29B3631EC635F000414661 /* CustomOverlayView.xib in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -259,12 +315,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				446BFD091CB0184A00619E78 /* BackgroundKolodaAnimator.swift in Sources */,
-				440FB7671B51499A009FC9FC /* CustomKolodaView.swift in Sources */,
-				44B5EC291B660C8500895E3D /* CustomOverlayView.swift in Sources */,
+				9C29B3611EC635F000414661 /* CustomKolodaView.swift in Sources */,
+				9C29B3621EC635F000414661 /* CustomOverlayView.swift in Sources */,
+				9C29B3661EC635F000414661 /* BackgroundKolodaAnimator.swift in Sources */,
+				9C29B3641EC635F000414661 /* ExampleOverlayView.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
-				4420661F1B4457E800FD4CAD /* ExampleOverlayView.swift in Sources */,
-				440FB7691B515995009FC9FC /* BackgroundAnimationViewController.swift in Sources */,
+				9C29B3651EC635F000414661 /* BackgroundAnimationViewController.swift in Sources */,
+				9C29B36C1EC6383E00414661 /* TableView+AskVC.swift in Sources */,
+				9C29B3691EC637DF00414661 /* AskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +335,7 @@
 				4420661C1B44577500FD4CAD /* Base */,
 			);
 			name = OverlayView.xib;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		607FACD91AFB9204008FA782 /* Main.storyboard */ = {
@@ -393,6 +452,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = AJGRT7QY2H;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/IQKeyboardManagerSwift",
+				);
 				INFOPLIST_FILE = Koloda/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -410,6 +473,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = AJGRT7QY2H;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/IQKeyboardManagerSwift",
+				);
 				INFOPLIST_FILE = Koloda/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;

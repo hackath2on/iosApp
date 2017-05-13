@@ -9,6 +9,9 @@
 import UIKit
 import Koloda
 import pop
+import Alamofire
+import SwiftyJSON
+
 
 private let numberOfCards: Int = 5
 private let frameAnimationSpringBounciness: CGFloat = 9
@@ -21,6 +24,14 @@ class BackgroundAnimationViewController: UIViewController {
     @IBOutlet var customView: UIView!
     @IBOutlet weak var kolodaView: CustomKolodaView!
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.title = " "
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.title = "Preguntas y quejas"
+    }
+    
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +42,8 @@ class BackgroundAnimationViewController: UIViewController {
         kolodaView.animator = BackgroundKolodaAnimator(koloda: kolodaView)
         
         self.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
+        
+        
     }
     
     
@@ -92,7 +105,10 @@ extension BackgroundAnimationViewController: KolodaViewDataSource {
     
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
         
-        let imageView = UIImageView(image: UIImage(named: "cards_\(index + 1)"))
+        let imageView = UIImageView(image: UIImage(named: "QuejaImagenEjemplo"))
+        imageView.contentMode = .scaleToFill
+        imageView.layer.cornerRadius = 16
+        imageView.layer.masksToBounds = true
         
         
         let newView = UIView()
@@ -109,10 +125,9 @@ extension BackgroundAnimationViewController: KolodaViewDataSource {
         let verticalConstraint2 = NSLayoutConstraint(item: newView, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: imageView, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 0)
         
         
-        let widthConstraint = NSLayoutConstraint(item: newView, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: 100)
         let heightConstraint = NSLayoutConstraint(item: newView, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: 100)
         
-        NSLayoutConstraint.activate([horizontalConstraint, verticalConstraint, verticalConstraint2, widthConstraint, heightConstraint])
+        NSLayoutConstraint.activate([horizontalConstraint, verticalConstraint, verticalConstraint2, heightConstraint])
         
         let blurEffect = UIBlurEffect(style: .light)
         let visualEffectView = UIVisualEffectView(effect: blurEffect)

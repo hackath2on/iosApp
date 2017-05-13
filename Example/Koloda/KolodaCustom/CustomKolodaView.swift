@@ -13,7 +13,7 @@ let defaultTopOffset: CGFloat = 20
 let defaultHorizontalOffset: CGFloat = 10
 let defaultHeightRatio: CGFloat = 1.25
 let backgroundCardHorizontalMarginMultiplier: CGFloat = 0.25
-let backgroundCardScalePercent: CGFloat = 1.5
+let backgroundCardScalePercent: CGFloat = 0.1
 
 class CustomKolodaView: KolodaView {
 

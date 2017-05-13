@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "8E57D05CE9B621CE899C8C0A1E8DCEFD6B79708B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "EEED163F87944A432AA5186EBEBACD31558F8793" : 9223372036854775807,
+    "8E57D05CE9B621CE899C8C0A1E8DCEFD6B79708B" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "08ED8412-809C-400B-BCF4-24DF3F365F26",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "EEED163F87944A432AA5186EBEBACD31558F8793" : "..",
+    "8E57D05CE9B621CE899C8C0A1E8DCEFD6B79708B" : "H2O-iOS\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Koloda",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Example\/Koloda.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/eironeia\/H2O-iOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8E57D05CE9B621CE899C8C0A1E8DCEFD6B79708B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/eironeia\/HackForGood-iOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EEED163F87944A432AA5186EBEBACD31558F8793"
+    }
+  ]
+}
