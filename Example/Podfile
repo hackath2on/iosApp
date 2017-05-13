@@ -10,6 +10,7 @@ target 'Koloda_Example' do
   pod 'Firebase'
   pod 'Kingfisher'
   pod 'Firebase/Auth'
+  pod 'Firebase/Messaging'
 end
 
 post_install do |installer|

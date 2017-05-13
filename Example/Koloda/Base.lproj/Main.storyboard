@@ -104,9 +104,10 @@
                     <connections>
                         <outlet property="contractIDTextField" destination="okT-Mp-weX" id="1p1-A4-K3s"/>
                         <outlet property="loginButton" destination="jW8-Md-x5q" id="eB9-fb-crN"/>
+                        <outlet property="logoVieww" destination="gIw-Zb-QX7" id="PML-du-VTU"/>
                         <outlet property="titleLabel" destination="SNA-j1-oXv" id="1J4-dA-zyD"/>
                         <outlet property="welcomeLabel" destination="lSU-Rf-Cqh" id="tkh-aM-FJe"/>
-                        <segue destination="dm7-I1-t5T" kind="show" identifier="loginSegue" id="l1J-EX-B8v"/>
+                        <segue destination="dm7-I1-t5T" kind="show" identifier="loginSegue" animates="NO" id="l1J-EX-B8v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qyo-6u-TV2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -207,7 +208,7 @@
                                 <rect key="frame" x="16" y="74" width="343" height="515"/>
                                 <color key="backgroundColor" red="0.1385757625" green="0.15306133029999999" blue="0.16547116640000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="descriptionCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="imageCell" rowHeight="183" id="eyY-bt-R3E">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="imageCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="imageCell" rowHeight="183" id="eyY-bt-R3E">
                                         <rect key="frame" x="0.0" y="28" width="343" height="183"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eyY-bt-R3E" id="1yB-GL-ylI">
@@ -340,7 +341,7 @@
         <!--Navigation Controller-->
         <scene sceneID="xyV-FF-ZAb">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dm7-I1-t5T" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dm7-I1-t5T" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kkd-34-nTi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

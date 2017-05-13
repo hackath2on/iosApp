@@ -25,7 +25,8 @@
 		9C29B3731EC7123B00414661 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C29B3721EC7123B00414661 /* IQKeyboardManagerSwift.framework */; };
 		9C29B3791EC7134100414661 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C29B3781EC7134100414661 /* WelcomeViewController.swift */; };
 		9C29B37C1EC713EE00414661 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C29B37A1EC713EE00414661 /* LaunchScreen.xib */; };
-		9C29B37E1EC73CF200414661 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C29B37D1EC73CF200414661 /* GoogleService-Info.plist */; };
+		9C29B3951EC79E3600414661 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C29B3941EC79E3600414661 /* UserNotifications.framework */; };
+		9C29B3971EC7A49B00414661 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C29B3961EC7A49B00414661 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,7 +53,9 @@
 		9C29B3721EC7123B00414661 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManagerSwift.framework; path = "Pods/../build/Debug-iphoneos/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework"; sourceTree = "<group>"; };
 		9C29B3781EC7134100414661 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		9C29B37B1EC713EE00414661 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		9C29B37D1EC73CF200414661 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9C29B3931EC79C1900414661 /* Koloda_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Koloda_Example.entitlements; sourceTree = "<group>"; };
+		9C29B3941EC79E3600414661 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		9C29B3961EC7A49B00414661 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A8A21A7254497CF03F2BBEA3 /* Pods-Koloda_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Koloda_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Koloda_Tests/Pods-Koloda_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		CF2C9E50C19A9188464AE19E /* Pods-Koloda_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Koloda_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Koloda_Example/Pods-Koloda_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		D6781607B5327BAF503C32E3 /* Koloda.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Koloda.podspec; path = ../Koloda.podspec; sourceTree = "<group>"; };
@@ -63,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C29B3951EC79E3600414661 /* UserNotifications.framework in Frameworks */,
 				9C29B3731EC7123B00414661 /* IQKeyboardManagerSwift.framework in Frameworks */,
 				9C29B3711EC711C400414661 /* SwiftyJSON.framework in Frameworks */,
 				9C29B36F1EC710B400414661 /* Alamofire.framework in Frameworks */,
@@ -76,6 +80,7 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				9C29B3931EC79C1900414661 /* Koloda_Example.entitlements */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Hackath2on */,
 				607FACD11AFB9204008FA782 /* Products */,
@@ -97,11 +102,11 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
-				9C29B3581EC635F000414661 /* KolodaCustom */,
 				607FACD41AFB9204008FA782 /* Info.plist */,
-				9C29B37D1EC73CF200414661 /* GoogleService-Info.plist */,
+				9C29B3961EC7A49B00414661 /* GoogleService-Info.plist */,
 				9C29B35D1EC635F000414661 /* Scenes */,
 				9C29B36D1EC7103900414661 /* StoryBoard */,
+				9C29B3581EC635F000414661 /* KolodaCustom */,
 			);
 			name = Hackath2on;
 			path = Koloda;
@@ -119,6 +124,7 @@
 		85B3405D0F2A73D9A709B3FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9C29B3941EC79E3600414661 /* UserNotifications.framework */,
 				9C29B3721EC7123B00414661 /* IQKeyboardManagerSwift.framework */,
 				9C29B3701EC711C400414661 /* SwiftyJSON.framework */,
 				9C29B36E1EC710B400414661 /* Alamofire.framework */,
@@ -246,8 +252,16 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = AJGRT7QY2H;
+						DevelopmentTeam = P455XF56F5;
 						LastSwiftMigration = 0800;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -279,7 +293,7 @@
 				4420661D1B44577500FD4CAD /* OverlayView.xib in Resources */,
 				9C29B3631EC635F000414661 /* CustomOverlayView.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
-				9C29B37E1EC73CF200414661 /* GoogleService-Info.plist in Resources */,
+				9C29B3971EC7A49B00414661 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,8 +488,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Koloda_Example.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = AJGRT7QY2H;
+				DEVELOPMENT_TEAM = P455XF56F5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/IQKeyboardManagerSwift",
@@ -483,7 +498,7 @@
 				INFOPLIST_FILE = Koloda/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = com.eironeia.hackath2on;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eironeia.hackath2on17;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -495,8 +510,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Koloda_Example.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = AJGRT7QY2H;
+				DEVELOPMENT_TEAM = P455XF56F5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/IQKeyboardManagerSwift",
@@ -504,7 +520,7 @@
 				INFOPLIST_FILE = Koloda/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = com.eironeia.hackath2on;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eironeia.hackath2on17;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
