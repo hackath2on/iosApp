@@ -12,7 +12,6 @@
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
-		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		9C29B3611EC635F000414661 /* CustomKolodaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C29B3591EC635F000414661 /* CustomKolodaView.swift */; };
 		9C29B3621EC635F000414661 /* CustomOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C29B35A1EC635F000414661 /* CustomOverlayView.swift */; };
 		9C29B3631EC635F000414661 /* CustomOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C29B35B1EC635F000414661 /* CustomOverlayView.xib */; };
@@ -24,6 +23,9 @@
 		9C29B36F1EC710B400414661 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C29B36E1EC710B400414661 /* Alamofire.framework */; };
 		9C29B3711EC711C400414661 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C29B3701EC711C400414661 /* SwiftyJSON.framework */; };
 		9C29B3731EC7123B00414661 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C29B3721EC7123B00414661 /* IQKeyboardManagerSwift.framework */; };
+		9C29B3791EC7134100414661 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C29B3781EC7134100414661 /* WelcomeViewController.swift */; };
+		9C29B37C1EC713EE00414661 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C29B37A1EC713EE00414661 /* LaunchScreen.xib */; };
+		9C29B37E1EC73CF200414661 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C29B37D1EC73CF200414661 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +39,6 @@
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		9C29B3591EC635F000414661 /* CustomKolodaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomKolodaView.swift; sourceTree = "<group>"; };
 		9C29B35A1EC635F000414661 /* CustomOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOverlayView.swift; sourceTree = "<group>"; };
 		9C29B35B1EC635F000414661 /* CustomOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomOverlayView.xib; sourceTree = "<group>"; };
@@ -49,6 +50,9 @@
 		9C29B36E1EC710B400414661 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/Koloda-ahkvvxfxggyljhaoldsbprhmxooj/Build/Products/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		9C29B3701EC711C400414661 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/Koloda-ahkvvxfxggyljhaoldsbprhmxooj/Build/Products/Debug-iphoneos/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		9C29B3721EC7123B00414661 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManagerSwift.framework; path = "Pods/../build/Debug-iphoneos/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework"; sourceTree = "<group>"; };
+		9C29B3781EC7134100414661 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = Welcome/WelcomeViewController.swift; sourceTree = "<group>"; };
+		9C29B37B1EC713EE00414661 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		9C29B37D1EC73CF200414661 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A8A21A7254497CF03F2BBEA3 /* Pods-Koloda_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Koloda_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Koloda_Tests/Pods-Koloda_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		CF2C9E50C19A9188464AE19E /* Pods-Koloda_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Koloda_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Koloda_Example/Pods-Koloda_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		D6781607B5327BAF503C32E3 /* Koloda.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Koloda.podspec; path = ../Koloda.podspec; sourceTree = "<group>"; };
@@ -73,7 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
-				607FACD21AFB9204008FA782 /* Example */,
+				607FACD21AFB9204008FA782 /* Hackath2on */,
 				607FACD11AFB9204008FA782 /* Products */,
 				AB88095976C7B6CA809587FB /* Pods */,
 				85B3405D0F2A73D9A709B3FA /* Frameworks */,
@@ -88,16 +92,18 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		607FACD21AFB9204008FA782 /* Example */ = {
+		607FACD21AFB9204008FA782 /* Hackath2on */ = {
 			isa = PBXGroup;
 			children = (
+				607FACDC1AFB9204008FA782 /* Images.xcassets */,
+				9C29B3581EC635F000414661 /* KolodaCustom */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD41AFB9204008FA782 /* Info.plist */,
-				9C29B3581EC635F000414661 /* KolodaCustom */,
-				9C29B36D1EC7103900414661 /* StoryBoard */,
+				9C29B37D1EC73CF200414661 /* GoogleService-Info.plist */,
 				9C29B35D1EC635F000414661 /* Scenes */,
+				9C29B36D1EC7103900414661 /* StoryBoard */,
 			);
-			name = Example;
+			name = Hackath2on;
 			path = Koloda;
 			sourceTree = "<group>";
 		};
@@ -136,6 +142,8 @@
 		9C29B35D1EC635F000414661 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				9C29B3741EC7131A00414661 /* Welcome */,
+				9C29B3781EC7134100414661 /* WelcomeViewController.swift */,
 				9C29B35E1EC635F000414661 /* QuestionsList */,
 				9C29B3671EC637C300414661 /* Ask */,
 			);
@@ -172,10 +180,24 @@
 			isa = PBXGroup;
 			children = (
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
-				607FACDC1AFB9204008FA782 /* Images.xcassets */,
-				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
+				9C29B37A1EC713EE00414661 /* LaunchScreen.xib */,
 			);
 			name = StoryBoard;
+			sourceTree = "<group>";
+		};
+		9C29B3741EC7131A00414661 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				9C29B3751EC7131A00414661 /* Extensions */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		9C29B3751EC7131A00414661 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		AB88095976C7B6CA809587FB /* Pods */ = {
@@ -252,11 +274,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C29B37C1EC713EE00414661 /* LaunchScreen.xib in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				4420661D1B44577500FD4CAD /* OverlayView.xib in Resources */,
 				9C29B3631EC635F000414661 /* CustomOverlayView.xib in Resources */,
-				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
+				9C29B37E1EC73CF200414661 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C29B3791EC7134100414661 /* WelcomeViewController.swift in Sources */,
 				9C29B3611EC635F000414661 /* CustomKolodaView.swift in Sources */,
 				9C29B3621EC635F000414661 /* CustomOverlayView.swift in Sources */,
 				9C29B3661EC635F000414661 /* BackgroundKolodaAnimator.swift in Sources */,
@@ -346,10 +370,10 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		607FACDE1AFB9204008FA782 /* LaunchScreen.xib */ = {
+		9C29B37A1EC713EE00414661 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				607FACDF1AFB9204008FA782 /* Base */,
+				9C29B37B1EC713EE00414661 /* Base */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
@@ -459,7 +483,7 @@
 				INFOPLIST_FILE = Koloda/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yalantis.KolodaExample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eironeia.hackath2on;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -480,7 +504,7 @@
 				INFOPLIST_FILE = Koloda/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yalantis.KolodaExample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eironeia.hackath2on;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
