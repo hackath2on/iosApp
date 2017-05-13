@@ -22,6 +22,10 @@ private let kolodaAlphaValueSemiTransparent: CGFloat = 0.1
 class BackgroundAnimationViewController: UIViewController {
 
     @IBOutlet var customView: UIView!
+    
+    
+    
+    
     @IBOutlet weak var kolodaView: CustomKolodaView!
     
     override func viewWillDisappear(_ animated: Bool) {

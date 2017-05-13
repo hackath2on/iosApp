@@ -82,14 +82,20 @@
                                     <constraint firstItem="lSU-Rf-Cqh" firstAttribute="leading" secondItem="gIw-Zb-QX7" secondAttribute="leading" id="stW-7B-BbF"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="aZL-Ng-2Mp">
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.1385757625" green="0.15306133029999999" blue="0.16547116640000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="jW8-Md-x5q" firstAttribute="top" secondItem="okT-Mp-weX" secondAttribute="bottom" constant="19" id="1cR-1g-BpK"/>
                             <constraint firstItem="okT-Mp-weX" firstAttribute="trailing" secondItem="wng-GT-be2" secondAttribute="trailingMargin" id="5e1-Sc-ylF"/>
+                            <constraint firstItem="aZL-Ng-2Mp" firstAttribute="centerX" secondItem="wng-GT-be2" secondAttribute="centerX" id="72c-f1-IRn"/>
                             <constraint firstItem="okT-Mp-weX" firstAttribute="centerY" secondItem="wng-GT-be2" secondAttribute="centerY" id="7Yo-4A-348"/>
                             <constraint firstItem="jW8-Md-x5q" firstAttribute="leading" secondItem="wng-GT-be2" secondAttribute="leadingMargin" id="G9Y-uZ-2j5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SNA-j1-oXv" secondAttribute="trailing" id="Mhx-0a-jAp"/>
+                            <constraint firstItem="aZL-Ng-2Mp" firstAttribute="centerY" secondItem="wng-GT-be2" secondAttribute="centerY" id="QzW-XW-DNr"/>
                             <constraint firstItem="okT-Mp-weX" firstAttribute="centerX" secondItem="wng-GT-be2" secondAttribute="centerX" id="RXm-nw-mG5"/>
                             <constraint firstItem="okT-Mp-weX" firstAttribute="leading" secondItem="wng-GT-be2" secondAttribute="leadingMargin" id="VMX-ml-mhz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jW8-Md-x5q" secondAttribute="trailing" id="VOo-us-Qhb"/>
@@ -103,6 +109,7 @@
                     <navigationItem key="navigationItem" id="lfE-O0-lcD"/>
                     <connections>
                         <outlet property="contractIDTextField" destination="okT-Mp-weX" id="1p1-A4-K3s"/>
+                        <outlet property="loaderIndicator" destination="aZL-Ng-2Mp" id="WU7-d6-VCx"/>
                         <outlet property="loginButton" destination="jW8-Md-x5q" id="eB9-fb-crN"/>
                         <outlet property="logoVieww" destination="gIw-Zb-QX7" id="PML-du-VTU"/>
                         <outlet property="titleLabel" destination="SNA-j1-oXv" id="1J4-dA-zyD"/>

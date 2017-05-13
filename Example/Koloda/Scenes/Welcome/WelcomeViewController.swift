@@ -10,8 +10,10 @@ import UIKit
 import Alamofire
 import Firebase
 import FirebaseAuth
+import MapKit
+import CoreLocation
 
-class WelcomeViewController: UIViewController {
+class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
 
     
     @IBOutlet var welcomeLabel: UILabel!
@@ -19,6 +21,11 @@ class WelcomeViewController: UIViewController {
     @IBOutlet var contractIDTextField: UITextField!
     @IBOutlet var loginButton: UIButton!
     @IBOutlet var logoVieww: UIView!
+    @IBOutlet var loaderIndicator: UIActivityIndicatorView!
+    
+    var locationManager:CLLocationManager?
+    var currentLocation:CLLocation?
+    
     
     var timer:Timer!
     
@@ -31,10 +38,13 @@ class WelcomeViewController: UIViewController {
         self.loginButton.isHidden = true
         self.logoVieww.isHidden = true
         
+        self.loaderIndicator.stopAnimating()
+        
         try! FIRAuth.auth()!.signOut()
         
         FIRAuth.auth()?.addStateDidChangeListener({ (auth, user) in
             if let _ = user {
+                self.loaderIndicator.stopAnimating()
                 self.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
                 self.performSegue(withIdentifier: "loginSegue", sender: self)
             }
@@ -47,7 +57,6 @@ class WelcomeViewController: UIViewController {
                 
             }
         })
-        
         
     }
     
@@ -67,6 +76,21 @@ class WelcomeViewController: UIViewController {
         
         // create a corresponding local notification
         
+        locationManager = CLLocationManager()
+        locationManager?.delegate = self
+        locationManager?.startUpdatingLocation()
+        
+        locationManager?.requestAlwaysAuthorization()
+        
+        self.contractIDTextField.text = "h2o\(Int64(Date().timeIntervalSince1970))@hotmail.com"
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        self.currentLocation = locations[0]
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
     }
     
     func dismissKeyboard() {
@@ -107,10 +131,15 @@ class WelcomeViewController: UIViewController {
             }
 
     @IBAction func loginButtonPressed(_ sender: Any) {
+        
+        self.loaderIndicator.startAnimating()
+        
+        print(self.currentLocation?.coordinate.latitude, self.currentLocation?.coordinate.longitude)
+        
         FIRAuth.auth()?.createUser(withEmail: self.contractIDTextField.text!, password: "test1234", completion: { (user, error) in
-            if let error = error {
-                print(error)
-                let refreshAlert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+            self.loaderIndicator.stopAnimating()
+            if let _ = error {
+                let refreshAlert = UIAlertController(title: "Error", message: error!.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
                 
                 refreshAlert.addAction(UIAlertAction(title: "Aceptar", style: .default, handler: { (action: UIAlertAction!) in
                 }))
@@ -120,6 +149,18 @@ class WelcomeViewController: UIViewController {
                 
                 self.present(refreshAlert, animated: true, completion: nil)
             }
+            else {
+                
+                
+                Alamofire.request("http://b5642a06.ngrok.io/users/\(user!.uid)?email=\(self.contractIDTextField.text!)&fcm_token=\(FIRInstanceID.instanceID().token()!)&lat=\(self.currentLocation!.coordinate.latitude)&lon=\(self.currentLocation!.coordinate.longitude)", method: .post)
+//                    .responseJSON(completionHandler: { (response) in
+//                    
+//                    if let json = response.result.value {
+//                        print("JSON: \(json)")
+//                    }
+//                })
+            }
+            
         })
     }
 }
