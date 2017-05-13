@@ -6,7 +6,10 @@ target 'Koloda_Example' do
   pod 'Alamofire', '~> 4.4'
   pod 'SwiftyJSON'
   pod 'IQKeyboardManagerSwift'
-  pod 'Firebase/Core'
+  pod 'Firebase/Database'
+  pod 'Firebase'
+  pod 'Kingfisher'
+  pod 'Firebase/Auth'
 end
 
 post_install do |installer|
