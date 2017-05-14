@@ -41,6 +41,7 @@ extension AskViewController {
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "titleCell") as! TitleTextFieldCell
             cell.descriptionTextField.delegate = self
+
             cell.labelTextFieldCellProtocol = self
             return cell
         case 2:

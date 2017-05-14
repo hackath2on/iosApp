@@ -40,7 +40,7 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
         
         self.loaderIndicator.stopAnimating()
         
-//        try! FIRAuth.auth()!.signOut()
+        try! FIRAuth.auth()!.signOut()
         
         FIRAuth.auth()?.addStateDidChangeListener({ (auth, user) in
             if let _ = user {

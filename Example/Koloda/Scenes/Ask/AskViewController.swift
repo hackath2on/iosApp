@@ -19,6 +19,8 @@ class AskViewController:UIViewController, UITableViewDelegate, UITableViewDataSo
     var incidencePictureURL: String!
     var incidenceDescription: String!
     
+    var loaderIndicator:UIActivityIndicatorView!
+    
     var locationManager:CLLocationManager?
     var currentLocation:CLLocation?
     
@@ -40,21 +42,36 @@ class AskViewController:UIViewController, UITableViewDelegate, UITableViewDataSo
         locationManager?.startUpdatingLocation()
         
         locationManager?.requestAlwaysAuthorization()
+        
+        self.loaderIndicator = UIActivityIndicatorView()
+        view.addSubview(loaderIndicator)
+        
+        
+        let centerX = NSLayoutConstraint(item: loaderIndicator, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 2)
+        
+        let centerY = NSLayoutConstraint(item: loaderIndicator, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: 0)
+        
+        NSLayoutConstraint.activate([centerX, centerY])
+        
+        loaderIndicator.hidesWhenStopped = true
+        loaderIndicator.stopAnimating()
+        
     }
     
     @IBAction func askButtonPressed(_ sender: Any) {
-        print(incidenceDescription)
         
+        loaderIndicator.startAnimating()
+        self.loaderIndicator.layer.zPosition = 1
         //POST /users/:userID/complains param: title, url imagen, lat, lon
         let user = FIRAuth.auth()?.currentUser!
         
-        print(self.incidenceDescription, self.incidencePictureURL, self.incidenceDescription!, self.incidencePictureURL!)
-        
+        self.incidenceDescription = self.incidenceDescription.replacingOccurrences(of: " ", with: "%20")
         let response = Alamofire.request("\(Constants.ngrokURL)/users/\(user!.uid)/complains?title=\(self.incidenceDescription!)&image_url=\(self.incidencePictureURL!)&lat=\(self.currentLocation!.coordinate.latitude)&lon=\(self.currentLocation!.coordinate.longitude)", method: .post)
             .responseJSON(completionHandler: { (response) in
                 print(response)
                 if let json = response.result.value {
                     print("JSON: \(json)")
+                    self.loaderIndicator.stopAnimating()
                     self.navigationController?.popViewController(animated: true)
                 }
             })

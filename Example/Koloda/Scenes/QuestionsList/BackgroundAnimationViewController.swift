@@ -30,6 +30,7 @@ class BackgroundAnimationViewController: UIViewController, CLLocationManagerDele
     var complains:[Complain] = []
     var isSwipeByButton:Bool = false
     
+    @IBOutlet var loaderIndicator: UIActivityIndicatorView!
     struct Complain {
         var id:String!
         var picture:String!
@@ -48,6 +49,7 @@ class BackgroundAnimationViewController: UIViewController, CLLocationManagerDele
     override func viewWillAppear(_ animated: Bool) {
         self.title = "Incidencias"
         self.getComplains()
+        self.loaderIndicator.startAnimating()
     }
     
     //MARK: Lifecycle
@@ -174,11 +176,12 @@ extension BackgroundAnimationViewController: KolodaViewDataSource {
         if self.complains[self.kolodaView.currentCardIndex].picture == "" {
         
             let url = URL(string: "http://www.lavanguardia.com/r/GODO/LV/p3/WebSite/2016/05/19/Recortada/img_cvillalonga_20160219-115503_imagenes_lv_getty_agua_grifo_22222222222-664-ko2E--992x558@LaVanguardia-Web.jpg")
-            imageView.kf.setImage(with: url)
+            imageView.kf.setImage(with: url, placeholder: #imageLiteral(resourceName: "placeholder2"), options: nil, progressBlock: nil, completionHandler: nil)
         }
         else {
             let url = URL(string: self.complains[self.kolodaView.currentCardIndex].picture)
-            imageView.kf.setImage(with: url)
+            print(url)
+            imageView.kf.setImage(with: url, placeholder: #imageLiteral(resourceName: "placeholder2"), options: nil, progressBlock: nil, completionHandler: nil)
         }
         
         imageView.contentMode = .scaleToFill

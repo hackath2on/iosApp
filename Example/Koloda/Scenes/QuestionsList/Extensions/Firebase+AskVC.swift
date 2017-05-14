@@ -23,7 +23,10 @@ extension BackgroundAnimationViewController {
                 for (key,value) in arrayJSON {
                     self.complains.append(Complain(id: key, picture: value["image_url"].string!, description: value["title"].string!))
                 }
+                
+                self.loaderIndicator.stopAnimating()
                 self.kolodaView!.reloadData()
+                
             }
         })
     }

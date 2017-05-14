@@ -171,9 +171,13 @@
                                     <constraint firstAttribute="height" constant="34" id="t1m-7L-Loq"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="KAa-XC-Tk6">
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.13725490200000001" green="0.1529411765" blue="0.1647058824" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="KAa-XC-Tk6" firstAttribute="centerY" secondItem="PAT-Xa-b2g" secondAttribute="centerY" id="1bt-Yu-sSN"/>
                             <constraint firstAttribute="trailing" secondItem="Jng-cF-Fd5" secondAttribute="trailing" id="HDK-vX-CFt"/>
                             <constraint firstItem="430-8H-S9o" firstAttribute="top" secondItem="lFs-5J-kjv" secondAttribute="top" constant="25" id="PpG-qL-IJS"/>
                             <constraint firstItem="Jng-cF-Fd5" firstAttribute="top" secondItem="OPM-HU-f7U" secondAttribute="bottom" constant="64" id="SRd-NX-5XQ"/>
@@ -183,6 +187,7 @@
                             <constraint firstItem="Jng-cF-Fd5" firstAttribute="top" secondItem="OPM-HU-f7U" secondAttribute="bottom" id="hvw-DK-mFC"/>
                             <constraint firstItem="Jng-cF-Fd5" firstAttribute="leading" secondItem="PAT-Xa-b2g" secondAttribute="leading" id="m1p-4u-j1f"/>
                             <constraint firstItem="fbm-oE-jd7" firstAttribute="top" secondItem="430-8H-S9o" secondAttribute="top" constant="-25" id="qiL-sJ-vee"/>
+                            <constraint firstItem="KAa-XC-Tk6" firstAttribute="centerX" secondItem="PAT-Xa-b2g" secondAttribute="centerX" id="s0L-WV-v4b"/>
                             <constraint firstItem="430-8H-S9o" firstAttribute="leading" secondItem="lFs-5J-kjv" secondAttribute="trailing" constant="15" id="toL-x9-SqY"/>
                             <constraint firstAttribute="centerX" secondItem="430-8H-S9o" secondAttribute="centerX" id="z8k-SO-Ygi"/>
                         </constraints>
@@ -201,6 +206,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="kolodaView" destination="Jng-cF-Fd5" id="DXn-yX-NcT"/>
+                        <outlet property="loaderIndicator" destination="KAa-XC-Tk6" id="OAN-hC-Jtp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yd5-80-mNJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
