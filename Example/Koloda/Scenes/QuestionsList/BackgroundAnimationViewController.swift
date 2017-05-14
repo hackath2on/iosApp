@@ -26,7 +26,9 @@ class BackgroundAnimationViewController: UIViewController, CLLocationManagerDele
 
     @IBOutlet var customView: UIView!
     var numberOfCards: Int = 0
+    var currentCardIndex: Int!
     var complains:[Complain] = []
+    var isSwipeByButton:Bool = false
     
     struct Complain {
         var id:String!
@@ -71,18 +73,17 @@ class BackgroundAnimationViewController: UIViewController, CLLocationManagerDele
     @IBAction func leftButtonTapped() {
 //        POST /users/:userID/complains/:complainID/answer params: answer, lat lon
         let user = FIRAuth.auth()?.currentUser!
-        Alamofire.request("\(Constants.ngrokURL)/users/\(user!.uid)?answers=\(false)&lat=\(self.currentLocation!.coordinate.latitude)&lon=\(self.currentLocation!.coordinate.longitude)", method: .post).responseJSON { (response) in
-            
-            print(response)
-        }
+        Alamofire.request("\(Constants.ngrokURL)/users/\(user!.uid)/complains/\(self.complains[kolodaView.currentCardIndex].id!)/answers?answer=\(false)&lat=\(self.currentLocation!.coordinate.latitude)&lon=\(self.currentLocation!.coordinate.longitude)", method: .post).responseJSON { (response) in print(response)}
+        self.isSwipeByButton = true
         kolodaView?.swipe(.left)
     }
     
     @IBAction func rightButtonTapped() {
-//        POST /users/:userID/complains/:complainID/answer params: answer, lat lon
+        //        POST /users/:userID/complains/:complainID/answer params: answer, lat lon
         let user = FIRAuth.auth()?.currentUser!
         print(self.complains[kolodaView.currentCardIndex].description)
         Alamofire.request("\(Constants.ngrokURL)/users/\(user!.uid)/complains/\(self.complains[kolodaView.currentCardIndex].id!)/answers?answer=\(true)&lat=\(self.currentLocation!.coordinate.latitude)&lon=\(self.currentLocation!.coordinate.longitude)", method: .post).responseJSON { (response) in print(response)}
+        self.isSwipeByButton = true
         kolodaView?.swipe(.right)
     }
     
@@ -128,6 +129,30 @@ extension BackgroundAnimationViewController: KolodaViewDelegate {
         animation?.springSpeed = frameAnimationSpringSpeed
         return animation
     }
+    
+    func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
+        print("current: ", self.kolodaView.currentCardIndex)
+        
+        if isSwipeByButton {
+            self.isSwipeByButton = false
+        }
+        else {
+            switch direction {
+            case .right:
+                //                    POST /users/:userID/complains/:complainID/answer params: answer, lat lon
+                let user = FIRAuth.auth()?.currentUser!
+                Alamofire.request("\(Constants.ngrokURL)/users/\(user!.uid)/complains/\(self.complains[self.kolodaView.currentCardIndex].id!)/answers?answer=\(true)&lat=\(self.currentLocation!.coordinate.latitude)&lon=\(self.currentLocation!.coordinate.longitude)", method: .post).responseJSON { (response) in print(response)}
+            case .left:
+                //                    POST /users/:userID/complains/:complainID/answer params: answer, lat lon
+                let user = FIRAuth.auth()?.currentUser!
+                Alamofire.request("\(Constants.ngrokURL)/users/\(user!.uid)/complains/\(self.complains[self.kolodaView.currentCardIndex].id!)/answers?answer=\(false)&lat=\(self.currentLocation!.coordinate.latitude)&lon=\(self.currentLocation!.coordinate.longitude)", method: .post).responseJSON { (response) in print(response)}
+            default:
+                print("BYE")
+            }
+
+        }
+        
+    }
 }
 
 // MARK: KolodaViewDataSource
@@ -144,14 +169,15 @@ extension BackgroundAnimationViewController: KolodaViewDataSource {
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
         
         let imageView = UIImageView(image: UIImage(named: "QuejaImagenEjemplo"))
+        print("current: ", self.kolodaView.currentCardIndex)
         
-        if self.complains[index].picture == "" {
+        if self.complains[self.kolodaView.currentCardIndex].picture == "" {
         
             let url = URL(string: "http://www.lavanguardia.com/r/GODO/LV/p3/WebSite/2016/05/19/Recortada/img_cvillalonga_20160219-115503_imagenes_lv_getty_agua_grifo_22222222222-664-ko2E--992x558@LaVanguardia-Web.jpg")
             imageView.kf.setImage(with: url)
         }
         else {
-            let url = URL(string: self.complains[index].picture)
+            let url = URL(string: self.complains[self.kolodaView.currentCardIndex].picture)
             imageView.kf.setImage(with: url)
         }
         
@@ -170,7 +196,7 @@ extension BackgroundAnimationViewController: KolodaViewDataSource {
         let newLabel = UILabel()
         newLabel.textColor = UIColor.white
         newLabel.font = newLabel.font.withSize(22)
-        newLabel.text = self.complains[index].description
+        newLabel.text = self.complains[self.kolodaView.currentCardIndex].description
         newLabel.numberOfLines = 10
         newLabel.layer.zPosition = 1
         newLabel.translatesAutoresizingMaskIntoConstraints = false
