@@ -40,7 +40,7 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
         
         self.loaderIndicator.stopAnimating()
         
-        try! FIRAuth.auth()!.signOut()
+//        try! FIRAuth.auth()!.signOut()
         
         FIRAuth.auth()?.addStateDidChangeListener({ (auth, user) in
             if let _ = user {
@@ -134,8 +134,6 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
         
         self.loaderIndicator.startAnimating()
         
-        print(self.currentLocation?.coordinate.latitude, self.currentLocation?.coordinate.longitude)
-        
         FIRAuth.auth()?.createUser(withEmail: self.contractIDTextField.text!, password: "test1234", completion: { (user, error) in
             self.loaderIndicator.stopAnimating()
             if let _ = error {
@@ -152,13 +150,13 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
             else {
                 
                 
-                Alamofire.request("http://b5642a06.ngrok.io/users/\(user!.uid)?email=\(self.contractIDTextField.text!)&fcm_token=\(FIRInstanceID.instanceID().token()!)&lat=\(self.currentLocation!.coordinate.latitude)&lon=\(self.currentLocation!.coordinate.longitude)", method: .post)
-//                    .responseJSON(completionHandler: { (response) in
+                Alamofire.request("\(Constants.ngrokURL)/users/\(user!.uid)?email=\(self.contractIDTextField.text!)&fcm_token=\(FIRInstanceID.instanceID().token()!)&lat=\(self.currentLocation!.coordinate.latitude)&lon=\(self.currentLocation!.coordinate.longitude)", method: .post)
+                    .responseJSON(completionHandler: { (_) in
 //                    
 //                    if let json = response.result.value {
 //                        print("JSON: \(json)")
 //                    }
-//                })
+                })
             }
             
         })

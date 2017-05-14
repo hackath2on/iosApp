@@ -27,6 +27,10 @@
 		9C29B3951EC79E3600414661 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C29B3941EC79E3600414661 /* UserNotifications.framework */; };
 		9C29B3971EC7A49B00414661 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C29B3961EC7A49B00414661 /* GoogleService-Info.plist */; };
 		9C29B39C1EC7C51700414661 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C29B39B1EC7C51700414661 /* SwiftyJSON.framework */; };
+		9C29B39E1EC7D4F100414661 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C29B39D1EC7D4F100414661 /* Constants.swift */; };
+		9C29B3A11EC7D90200414661 /* TitleTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C29B3A01EC7D90200414661 /* TitleTextFieldCell.swift */; };
+		9C29B3A31EC7DF2900414661 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C29B3A21EC7DF2900414661 /* LocationCell.swift */; };
+		9C29B3A51EC7DF9500414661 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C29B3A41EC7DF9500414661 /* ImageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +61,10 @@
 		9C29B3941EC79E3600414661 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		9C29B3961EC7A49B00414661 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9C29B39B1EC7C51700414661 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Debug-iphoneos/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
+		9C29B39D1EC7D4F100414661 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9C29B3A01EC7D90200414661 /* TitleTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleTextFieldCell.swift; sourceTree = "<group>"; };
+		9C29B3A21EC7DF2900414661 /* LocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
+		9C29B3A41EC7DF9500414661 /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		A8A21A7254497CF03F2BBEA3 /* Pods-Koloda_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Koloda_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Koloda_Tests/Pods-Koloda_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		CF2C9E50C19A9188464AE19E /* Pods-Koloda_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Koloda_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Koloda_Example/Pods-Koloda_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		D6781607B5327BAF503C32E3 /* Koloda.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Koloda.podspec; path = ../Koloda.podspec; sourceTree = "<group>"; };
@@ -105,9 +113,11 @@
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACD41AFB9204008FA782 /* Info.plist */,
 				9C29B3961EC7A49B00414661 /* GoogleService-Info.plist */,
+				9C29B39F1EC7D89F00414661 /* CustomCells */,
 				9C29B35D1EC635F000414661 /* Scenes */,
 				9C29B36D1EC7103900414661 /* StoryBoard */,
 				9C29B3581EC635F000414661 /* KolodaCustom */,
+				9C29B39D1EC7D4F100414661 /* Constants.swift */,
 			);
 			name = Hackath2on;
 			path = Koloda;
@@ -206,6 +216,16 @@
 			children = (
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9C29B39F1EC7D89F00414661 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				9C29B3A01EC7D90200414661 /* TitleTextFieldCell.swift */,
+				9C29B3A21EC7DF2900414661 /* LocationCell.swift */,
+				9C29B3A41EC7DF9500414661 /* ImageCell.swift */,
+			);
+			path = CustomCells;
 			sourceTree = "<group>";
 		};
 		AB88095976C7B6CA809587FB /* Pods */ = {
@@ -359,10 +379,14 @@
 				9C29B3621EC635F000414661 /* CustomOverlayView.swift in Sources */,
 				9C29B3661EC635F000414661 /* BackgroundKolodaAnimator.swift in Sources */,
 				9C29B3641EC635F000414661 /* ExampleOverlayView.swift in Sources */,
+				9C29B39E1EC7D4F100414661 /* Constants.swift in Sources */,
+				9C29B3A31EC7DF2900414661 /* LocationCell.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				9C29B3A11EC7D90200414661 /* TitleTextFieldCell.swift in Sources */,
 				9C29B3651EC635F000414661 /* BackgroundAnimationViewController.swift in Sources */,
 				9C29B36C1EC6383E00414661 /* TableView+AskVC.swift in Sources */,
 				9C29B3691EC637DF00414661 /* AskViewController.swift in Sources */,
+				9C29B3A51EC7DF9500414661 /* ImageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

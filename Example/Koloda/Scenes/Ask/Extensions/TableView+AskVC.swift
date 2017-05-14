@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import Kingfisher
 
-
+protocol LabelTextFieldCellProtocol {
+    func textFieldDidChangeValue(sender: UITextField)
+}
 extension AskViewController {
     
     
@@ -21,11 +24,29 @@ extension AskViewController {
         
         switch indexPath.row {
         case 0:
-            return tableView.dequeueReusableCell(withIdentifier: "imageCell")!
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "imageCell") as! ImageCell
+            
+            
+            cell.incidenceImageView.layer.cornerRadius = 8
+            cell.incidenceImageView.layer.masksToBounds = true
+            
+            self.incidencePictureURL = Constants.incidenciesImageURLsStrings[Int(arc4random_uniform(UInt32(Constants.incidenciesImageURLsStrings.count)))]
+            print(incidencePictureURL)
+            let url = URL(string: self.incidencePictureURL)
+            
+            cell.incidenceImageView.kf.setImage(with: url)
+            
+            return cell
         case 1:
-            return tableView.dequeueReusableCell(withIdentifier: "titleCell")!
+            let cell = tableView.dequeueReusableCell(withIdentifier: "titleCell") as! TitleTextFieldCell
+            cell.descriptionTextField.delegate = self
+            cell.labelTextFieldCellProtocol = self
+            return cell
         case 2:
-            return tableView.dequeueReusableCell(withIdentifier: "descriptionCell")!
+            let cell = tableView.dequeueReusableCell(withIdentifier: "locationCell") as! LocationCell
+            
+            return cell
         default:
             return UITableViewCell()
         }
@@ -39,7 +60,7 @@ extension AskViewController {
         case 1:
             return 90
         case 2:
-            return 183
+            return 90
         default:
             return UITableViewAutomaticDimension
         }

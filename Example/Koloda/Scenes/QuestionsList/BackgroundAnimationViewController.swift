@@ -9,8 +9,10 @@
 import UIKit
 import Koloda
 import pop
+import Firebase
 import Alamofire
 import SwiftyJSON
+import CoreLocation
 
 
 private let numberOfCards: Int = 5
@@ -19,12 +21,13 @@ private let frameAnimationSpringSpeed: CGFloat = 16
 private let kolodaCountOfVisibleCards = 2
 private let kolodaAlphaValueSemiTransparent: CGFloat = 0.1
 
-class BackgroundAnimationViewController: UIViewController {
+class BackgroundAnimationViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet var customView: UIView!
     
     
-    
+    var locationManager:CLLocationManager?
+    var currentLocation:CLLocation?
     
     @IBOutlet weak var kolodaView: CustomKolodaView!
     
@@ -33,7 +36,8 @@ class BackgroundAnimationViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.title = "Preguntas y quejas"
+        self.title = "Incidencias"
+        
     }
     
     //MARK: Lifecycle
@@ -47,7 +51,11 @@ class BackgroundAnimationViewController: UIViewController {
         
         self.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
         
+        locationManager = CLLocationManager()
+        locationManager?.delegate = self
+        locationManager?.startUpdatingLocation()
         
+        locationManager?.requestAlwaysAuthorization()
     }
     
     
@@ -62,6 +70,14 @@ class BackgroundAnimationViewController: UIViewController {
     
     @IBAction func undoButtonTapped() {
         kolodaView?.revertAction()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        self.currentLocation = locations[0]
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
     }
 }
 

@@ -7,24 +7,70 @@
 //
 
 import UIKit
+import Firebase
+import Alamofire
+import CoreLocation
 
-
-class AskViewController:UIViewController, UITableViewDelegate, UITableViewDataSource {
+class AskViewController:UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, LabelTextFieldCellProtocol, CLLocationManagerDelegate {
     
+    
+    var labelTextFieldCellProtocol:LabelTextFieldCellProtocol?
+    
+    var incidencePictureURL: String!
+    var incidenceDescription: String!
+    
+    var locationManager:CLLocationManager?
+    var currentLocation:CLLocation?
     
     @IBOutlet var askButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.askButton.layer.cornerRadius = 8
         
+        locationManager = CLLocationManager()
+        locationManager?.delegate = self
+        locationManager?.startUpdatingLocation()
         
+        locationManager?.requestAlwaysAuthorization()
     }
     
     @IBAction func askButtonPressed(_ sender: Any) {
+        print(incidenceDescription)
         
-//        print(self.titleTextField.text)
-//        print(self.descriptionTextView.text)
+        //POST /users/:userID/complains param: title, url imagen, lat, lon
+        let user = FIRAuth.auth()?.currentUser!
+        
+        print(self.incidenceDescription, self.incidencePictureURL, self.incidenceDescription!, self.incidencePictureURL!)
+        
+        let response = Alamofire.request("\(Constants.ngrokURL)/users/\(user!.uid)/complains?title=\(self.incidenceDescription!)&image_url=\(self.incidencePictureURL!)&lat=\(self.currentLocation!.coordinate.latitude)&lon=\(self.currentLocation!.coordinate.longitude)", method: .post)
+            .responseJSON(completionHandler: { (response) in
+                print(response)
+                if let json = response.result.value {
+                    print("JSON: \(json)")
+                    self.navigationController?.popViewController(animated: true)
+                }
+            })
+
+        print(response)
+        
+    }
+    
+    func textFieldDidChangeValue(sender: UITextField) {
+            self.incidenceDescription = sender.text!
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.incidenceDescription = textField.text!
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        self.currentLocation = locations[0]
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
     }
 }
