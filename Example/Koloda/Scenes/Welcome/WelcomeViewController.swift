@@ -40,7 +40,7 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
         
         self.loaderIndicator.stopAnimating()
         
-        try! FIRAuth.auth()!.signOut()
+//        try! FIRAuth.auth()!.signOut()
         
         FIRAuth.auth()?.addStateDidChangeListener({ (auth, user) in
             if let _ = user {
@@ -149,13 +149,13 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
             }
             else {
                 
-                
+                let fcmToken = user?.refreshToken!
                 Alamofire.request("\(Constants.ngrokURL)/users/\(user!.uid)?email=\(self.contractIDTextField.text!)&fcm_token=\(FIRInstanceID.instanceID().token()!)&lat=\(self.currentLocation!.coordinate.latitude)&lon=\(self.currentLocation!.coordinate.longitude)", method: .post)
-                    .responseJSON(completionHandler: { (_) in
-//                    
-//                    if let json = response.result.value {
-//                        print("JSON: \(json)")
-//                    }
+                    .responseJSON(completionHandler: { (response) in
+                        print(response)
+                        if let json = response.result.value {
+                            print("JSON: \(json)")
+                        }
                 })
             }
             
