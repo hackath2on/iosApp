@@ -138,7 +138,11 @@
                                 <color key="backgroundColor" red="0.13857576251029968" green="0.15306133031845093" blue="0.16547116637229919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFs-5J-kjv">
-                                <rect key="frame" x="130" y="603" width="32" height="32"/>
+                                <rect key="frame" x="122" y="578" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="8wd-2c-3pS"/>
+                                    <constraint firstAttribute="width" constant="50" id="i8O-2H-pva"/>
+                                </constraints>
                                 <state key="normal" image="btn_skip_pressed">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -147,7 +151,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbm-oE-jd7">
-                                <rect key="frame" x="213" y="604" width="32" height="32"/>
+                                <rect key="frame" x="203" y="578" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Dc1-gW-iI7"/>
+                                    <constraint firstAttribute="width" constant="50" id="HWK-Hc-eh6"/>
+                                </constraints>
                                 <state key="normal" image="btn_like_pressed">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -167,15 +175,15 @@
                         <color key="backgroundColor" red="0.13725490200000001" green="0.1529411765" blue="0.1647058824" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Jng-cF-Fd5" secondAttribute="trailing" id="HDK-vX-CFt"/>
-                            <constraint firstItem="430-8H-S9o" firstAttribute="top" secondItem="lFs-5J-kjv" secondAttribute="top" id="PpG-qL-IJS"/>
+                            <constraint firstItem="430-8H-S9o" firstAttribute="top" secondItem="lFs-5J-kjv" secondAttribute="top" constant="25" id="PpG-qL-IJS"/>
                             <constraint firstItem="Jng-cF-Fd5" firstAttribute="top" secondItem="OPM-HU-f7U" secondAttribute="bottom" constant="64" id="SRd-NX-5XQ"/>
                             <constraint firstAttribute="bottom" secondItem="Jng-cF-Fd5" secondAttribute="bottom" id="X83-tu-cSg"/>
                             <constraint firstItem="gMg-MP-KSD" firstAttribute="top" secondItem="430-8H-S9o" secondAttribute="bottom" constant="30" id="Yqm-cu-3EX"/>
-                            <constraint firstItem="fbm-oE-jd7" firstAttribute="leading" secondItem="430-8H-S9o" secondAttribute="trailing" constant="25" id="fV3-z6-46y"/>
+                            <constraint firstItem="fbm-oE-jd7" firstAttribute="leading" secondItem="430-8H-S9o" secondAttribute="trailing" constant="15" id="fV3-z6-46y"/>
                             <constraint firstItem="Jng-cF-Fd5" firstAttribute="top" secondItem="OPM-HU-f7U" secondAttribute="bottom" id="hvw-DK-mFC"/>
                             <constraint firstItem="Jng-cF-Fd5" firstAttribute="leading" secondItem="PAT-Xa-b2g" secondAttribute="leading" id="m1p-4u-j1f"/>
-                            <constraint firstItem="fbm-oE-jd7" firstAttribute="top" secondItem="430-8H-S9o" secondAttribute="top" constant="1" id="qiL-sJ-vee"/>
-                            <constraint firstItem="430-8H-S9o" firstAttribute="leading" secondItem="lFs-5J-kjv" secondAttribute="trailing" constant="25" id="toL-x9-SqY"/>
+                            <constraint firstItem="fbm-oE-jd7" firstAttribute="top" secondItem="430-8H-S9o" secondAttribute="top" constant="-25" id="qiL-sJ-vee"/>
+                            <constraint firstItem="430-8H-S9o" firstAttribute="leading" secondItem="lFs-5J-kjv" secondAttribute="trailing" constant="15" id="toL-x9-SqY"/>
                             <constraint firstAttribute="centerX" secondItem="430-8H-S9o" secondAttribute="centerX" id="z8k-SO-Ygi"/>
                         </constraints>
                         <variation key="default">

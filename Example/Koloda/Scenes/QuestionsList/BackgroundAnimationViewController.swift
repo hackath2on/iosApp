@@ -11,11 +11,12 @@ import Koloda
 import pop
 import Firebase
 import Alamofire
+import Kingfisher
 import SwiftyJSON
 import CoreLocation
 
 
-private let numberOfCards: Int = 5
+
 private let frameAnimationSpringBounciness: CGFloat = 9
 private let frameAnimationSpringSpeed: CGFloat = 16
 private let kolodaCountOfVisibleCards = 2
@@ -24,7 +25,14 @@ private let kolodaAlphaValueSemiTransparent: CGFloat = 0.1
 class BackgroundAnimationViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet var customView: UIView!
+    var numberOfCards: Int = 0
+    var complains:[Complain] = []
     
+    struct Complain {
+        var id:String!
+        var picture:String!
+        var description:String!
+    }
     
     var locationManager:CLLocationManager?
     var currentLocation:CLLocation?
@@ -37,7 +45,7 @@ class BackgroundAnimationViewController: UIViewController, CLLocationManagerDele
     
     override func viewWillAppear(_ animated: Bool) {
         self.title = "Incidencias"
-        
+        self.getComplains()
     }
     
     //MARK: Lifecycle
@@ -61,10 +69,20 @@ class BackgroundAnimationViewController: UIViewController, CLLocationManagerDele
     
     //MARK: IBActions
     @IBAction func leftButtonTapped() {
+//        POST /users/:userID/complains/:complainID/answer params: answer, lat lon
+        let user = FIRAuth.auth()?.currentUser!
+        Alamofire.request("\(Constants.ngrokURL)/users/\(user!.uid)?answers=\(false)&lat=\(self.currentLocation!.coordinate.latitude)&lon=\(self.currentLocation!.coordinate.longitude)", method: .post).responseJSON { (response) in
+            
+            print(response)
+        }
         kolodaView?.swipe(.left)
     }
     
     @IBAction func rightButtonTapped() {
+//        POST /users/:userID/complains/:complainID/answer params: answer, lat lon
+        let user = FIRAuth.auth()?.currentUser!
+        print(self.complains[kolodaView.currentCardIndex].description)
+        Alamofire.request("\(Constants.ngrokURL)/users/\(user!.uid)/complains/\(self.complains[kolodaView.currentCardIndex].id!)/answers?answer=\(true)&lat=\(self.currentLocation!.coordinate.latitude)&lon=\(self.currentLocation!.coordinate.longitude)", method: .post).responseJSON { (response) in print(response)}
         kolodaView?.swipe(.right)
     }
     
@@ -89,7 +107,7 @@ extension BackgroundAnimationViewController: KolodaViewDelegate {
     }
     
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
-        UIApplication.shared.openURL(URL(string: "https://yalantis.com/")!)
+//        UIApplication.shared.openURL(URL(string: "https://yalantis.com/")!)
     }
     
     func kolodaShouldApplyAppearAnimation(_ koloda: KolodaView) -> Bool {
@@ -120,12 +138,23 @@ extension BackgroundAnimationViewController: KolodaViewDataSource {
     }
     
     func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
-        return numberOfCards
+        return self.complains.count
     }
     
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
         
         let imageView = UIImageView(image: UIImage(named: "QuejaImagenEjemplo"))
+        
+        if self.complains[index].picture == "" {
+        
+            let url = URL(string: "http://www.lavanguardia.com/r/GODO/LV/p3/WebSite/2016/05/19/Recortada/img_cvillalonga_20160219-115503_imagenes_lv_getty_agua_grifo_22222222222-664-ko2E--992x558@LaVanguardia-Web.jpg")
+            imageView.kf.setImage(with: url)
+        }
+        else {
+            let url = URL(string: self.complains[index].picture)
+            imageView.kf.setImage(with: url)
+        }
+        
         imageView.contentMode = .scaleToFill
         imageView.layer.cornerRadius = 16
         imageView.layer.masksToBounds = true
@@ -133,10 +162,19 @@ extension BackgroundAnimationViewController: KolodaViewDataSource {
         
         let newView = UIView()
         newView.backgroundColor = UIColor.black
-        newView.alpha = 0.5
+        newView.alpha = 0.75
         newView.layer.cornerRadius = 8
         newView.translatesAutoresizingMaskIntoConstraints = false
         imageView.addSubview(newView)
+        
+        let newLabel = UILabel()
+        newLabel.textColor = UIColor.white
+        newLabel.font = newLabel.font.withSize(22)
+        newLabel.text = self.complains[index].description
+        newLabel.numberOfLines = 10
+        newLabel.layer.zPosition = 1
+        newLabel.translatesAutoresizingMaskIntoConstraints = false
+        imageView.addSubview(newLabel)
         
         let horizontalConstraint = NSLayoutConstraint(item: newView, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: imageView, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 0)
         
@@ -144,21 +182,20 @@ extension BackgroundAnimationViewController: KolodaViewDataSource {
         
         let verticalConstraint2 = NSLayoutConstraint(item: newView, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: imageView, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 0)
         
-        
         let heightConstraint = NSLayoutConstraint(item: newView, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: 100)
         
-        NSLayoutConstraint.activate([horizontalConstraint, verticalConstraint, verticalConstraint2, heightConstraint])
         
-        let blurEffect = UIBlurEffect(style: .light)
-        let visualEffectView = UIVisualEffectView(effect: blurEffect)
-        newView.addSubview(visualEffectView)
         
-        let label = UILabel() //frame: CGRect(x: (imageView.frame.maxX - imageView.frame.minX)/2 - 25, y: (imageView.frame.maxY - 100), width: 100, height: 100)
-        label.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+        let horizontalConstraint3 = NSLayoutConstraint(item: newLabel, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: imageView, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 8)
         
-        label.textColor = UIColor.red
-        label.layer.zPosition = 1
-//        imageView.addSubview(label)
+        let verticalConstraint3 = NSLayoutConstraint(item: newLabel, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: imageView, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 2)
+        
+        let verticalConstraint4 = NSLayoutConstraint(item: newLabel, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: imageView, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 0)
+        
+        
+        let heightConstraint3 = NSLayoutConstraint(item: newLabel, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: 100)
+        
+        NSLayoutConstraint.activate([horizontalConstraint, verticalConstraint, verticalConstraint2, heightConstraint, horizontalConstraint3, verticalConstraint3, verticalConstraint4, heightConstraint3])
         
         return imageView
     }

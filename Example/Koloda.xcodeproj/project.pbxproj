@@ -31,6 +31,7 @@
 		9C29B3A11EC7D90200414661 /* TitleTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C29B3A01EC7D90200414661 /* TitleTextFieldCell.swift */; };
 		9C29B3A31EC7DF2900414661 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C29B3A21EC7DF2900414661 /* LocationCell.swift */; };
 		9C29B3A51EC7DF9500414661 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C29B3A41EC7DF9500414661 /* ImageCell.swift */; };
+		9C29B3AA1EC7FE2C00414661 /* Firebase+AskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C29B3A91EC7FE2C00414661 /* Firebase+AskVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		9C29B3A01EC7D90200414661 /* TitleTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleTextFieldCell.swift; sourceTree = "<group>"; };
 		9C29B3A21EC7DF2900414661 /* LocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		9C29B3A41EC7DF9500414661 /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		9C29B3A91EC7FE2C00414661 /* Firebase+AskVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Firebase+AskVC.swift"; sourceTree = "<group>"; };
 		A8A21A7254497CF03F2BBEA3 /* Pods-Koloda_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Koloda_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Koloda_Tests/Pods-Koloda_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		CF2C9E50C19A9188464AE19E /* Pods-Koloda_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Koloda_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Koloda_Example/Pods-Koloda_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		D6781607B5327BAF503C32E3 /* Koloda.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Koloda.podspec; path = ../Koloda.podspec; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 		9C29B35E1EC635F000414661 /* QuestionsList */ = {
 			isa = PBXGroup;
 			children = (
+				9C29B3A81EC7FE2C00414661 /* Extensions */,
 				9C29B35F1EC635F000414661 /* BackgroundAnimationViewController.swift */,
 				9C29B3601EC635F000414661 /* BackgroundKolodaAnimator.swift */,
 			);
@@ -226,6 +229,14 @@
 				9C29B3A41EC7DF9500414661 /* ImageCell.swift */,
 			);
 			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		9C29B3A81EC7FE2C00414661 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9C29B3A91EC7FE2C00414661 /* Firebase+AskVC.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		AB88095976C7B6CA809587FB /* Pods */ = {
@@ -380,6 +391,7 @@
 				9C29B3661EC635F000414661 /* BackgroundKolodaAnimator.swift in Sources */,
 				9C29B3641EC635F000414661 /* ExampleOverlayView.swift in Sources */,
 				9C29B39E1EC7D4F100414661 /* Constants.swift in Sources */,
+				9C29B3AA1EC7FE2C00414661 /* Firebase+AskVC.swift in Sources */,
 				9C29B3A31EC7DF2900414661 /* LocationCell.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				9C29B3A11EC7D90200414661 /* TitleTextFieldCell.swift in Sources */,
